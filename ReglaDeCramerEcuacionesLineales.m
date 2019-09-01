@@ -1,7 +1,7 @@
 %ReglaDeCramerEcuacionesLineales.m
 %Programa para resolver sistemas de ecuaciones lineales 3x3
 %Metodo de Cramer
-%Roberto
+%Roberto Alejandro Gutierrez Guillen A01019608
 clc
 clear
 

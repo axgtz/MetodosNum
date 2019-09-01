@@ -21,6 +21,3 @@ fprintf('El residuo es igual a: %d\n', residuo);
 decimales = residuo / divisor;
 Resultado = contador + decimales;
 fprintf('El resultado final de la division es igual a: %3.4f\n', Resultado);
-
-
-    
