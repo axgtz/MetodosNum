@@ -6,7 +6,7 @@ clear
 
 fprintf('Introducir los valores del sistema de ecuaciones en una matriz entre corchete [], usar ; para separar fila y un espacio para columna\n');
 fprintf('\tEj. [2 3 1 0; 1 1 2 1; 1 -1 -1 -1]\n\n');
-%matrix = input("Introduzca valores de matriz de 3x4: ");
+matrix = input("Introduzca valores de matriz de 3x4: ");
 %matrix = [2 3 1 0; 1 1 2 1; 1 -1 -1 -1];   %Matriz prueba 1
 %matrix = [2 -1 1 2; 3 1 -2 9; -1 2 5 -5];  %Matriz prueba 2
 
