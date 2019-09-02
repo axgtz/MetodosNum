@@ -38,8 +38,7 @@ matrix = [2 -1 1 2; 3 1 -2 9; -1 2 5 -5];
 % disp(matrixSol);
 
  %Version 2 - Con For's
-%Checar que el determinante no sea 0 para poder resolver, sin contar
-%valores independientes
+%Checar que el determinante no sea 0 para poder resolver, sin contar valores independientes
 % if det(matrix(:, [1 2 3])) == 0
 %     fprintf("No se puede resolver el sistema porque el determinante es cero");
 % else    %matrix(r,c) = (vertical, horizontal)
@@ -51,10 +50,10 @@ matrix = [2 -1 1 2; 3 1 -2 9; -1 2 5 -5];
 %             
 %             if matrix(1,c) ~= 0 %comprobar que no sea 0
 %                 matrix(r,:) = matrix(r,:) - matrix(c,:)/matrix(c,c)*matrix(r,c);
-%                 disp(matrix);
 %             end
 %         end % Ceros en la primer columna
 %     end    %Mover a la segunda columna
+%     disp(matrix);
 %     %Substitucion
 %     matrixSol(1,3)= matrix(3,4)/matrix(3,3);
 %     matrixSol(1,2)= (matrix(2,4) - matrix(2,3)*matrixSol(1,3))/matrix(2,2);
@@ -62,7 +61,7 @@ matrix = [2 -1 1 2; 3 1 -2 9; -1 2 5 -5];
 % 
 % end
 % disp(matrixSol);
-% 
+
 
     %Version 3 - Mas generica
 if det(matrix(:, [1 2 3])) ~= 0 %Checar que el determinante no sea 0 para poder resolver, sin contar valores independientes
@@ -71,21 +70,29 @@ if det(matrix(:, [1 2 3])) ~= 0 %Checar que el determinante no sea 0 para poder 
                 matrix([1 i],:)=matrix([i 1],:); %Intercambiar donde el coeficiente no es 0
                 % Se usa el renglon uno para sacar 0
                 %matrix(r,c) = (vertical, horizontal)
-                %Iterar columnas de matriz
+                %Iterar columnas de matriz                
                 for c=1:(size(matrix,2)-2)      %num de columnas, menos columna de coeficientes ind y una columna
-                    for r=c+1:(size(matrix,1))    %numero de renglones, Iterar renglones de matrix
+                    for r=c+1:size(matrix,1)    %numero de renglones, Iterar renglones de matrix
                         matrix(r,:) = matrix(r,:) - matrix(c,:)/matrix(c,c)*matrix(r,c);
                     end
                 end
                 break %Se sale del loop
             end
     end
+    %Inicializar matriz de soluciones
+    matrixSol = zeros(size(matrix,1),1); %Numero de renglones igual a la matriz y una columna
+    disp(matrix);
     
    %Realizar substituciones
-
+   for r = (size(matrix,1)):-1:1 %Empieza hasta abajo,va a ir restando hasta llegar al 1
+       for c = (size(matrix,2))-1:-1:(r+1) % Primer -1 excluir la columna de independientes, r+1 es donde para 
+           matrix(r,size(matrix,2)) = matrix(r,size(matrix,2)) - matrixSol(c)*matrix(r,c);
+       end
+       matrixSol(r) = matrix(r,size(matrix,2))/matrix(r,r);  % en la primer iteracion solo corre este
+   end
 else
     fprintf("No se puede resolver el sistema porque el determinante es cero");
 end
 
 
-disp(matrix);
+disp(matrixSol);
