@@ -1,6 +1,7 @@
 %MetodoGaussSeidel
 %Programa para resolver sistemas de ecuaciones lineales 2x2
 %Roberto Alejandro Gutierrez Guillen A01019608
+%no terminado
 clc
 clear
 
