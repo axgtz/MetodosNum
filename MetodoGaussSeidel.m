@@ -14,6 +14,10 @@ fprintf('Introducir tolerancia\n');
 %tol = input('Introducir tolerancia');
 tol = 0.5;
 
+while > tol
+    
+end
+
 x1 = (matrix1(1,3) - (matrix1(1,2)*matrixSol(2)))/matrix1(1,1);
 y1 = (matrix1(2,3) - (matrix1(2,1)*matrixSol(1)))/matrix1(2,2);
 
