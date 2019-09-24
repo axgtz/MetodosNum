@@ -19,7 +19,7 @@ else
        fprintf("La raiz x1 es: %d\n", ((-matrix(2)+disc)/(2*matrix(1))));
        fprintf("La raiz x2 es: %d\n", ((-matrix(2)-disc)/(2*matrix(1))));
    else % Si el discriminante es 0
-       fprintf("Las raices son reales e iguales: %d\n", ((-matrix(2)/(2*a))));
+       fprintf("Las raices son reales e iguales: %d\n", ((-matrix(2)/(2*martix(1)))));
        
    end
 end
