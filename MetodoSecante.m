@@ -45,5 +45,5 @@ fprintf("La raiz buscada es: %f",x2);
 fprintf("\nEcuacion");
 disp(ecuation);
 fprintf("\nIntervalos de busqueda %d %d",ogx0,ogx1);
+ 
 
-c6= input("Introduzca el valor de coeficiente 6= ");
