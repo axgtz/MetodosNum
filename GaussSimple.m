@@ -7,11 +7,8 @@ clear
 fprintf('Introducir los valores del sistema de ecuaciones en una matriz entre corchete [], usar ; para separar fila y un espacio para columna\n');
 fprintf('\tEj. [2 3 1 0; 1 1 2 1; 1 -1 -1 -1]\n\n');
 %matrix = input("Introduzca valores de matriz de 3x4: ");
-%matrix = [2 3 1 0; 1 1 2 1; 1 -1 -1 -1];   %Matriz prueba 1
-%matrix = [2 -1 1 2; 3 1 -2 9; -1 2 5 -5];  %Matriz prueba 2
-%matrix = [2 -1 3 5; 2 2 3 7; -2 3 0 -3];
-%matrix = [0 1 3 4;1 1 1 3; 0 2 3 5];
-matrix = [13.422 0 0 0 452.775; -13.422 12.252 0 0 300; 0 -12.252 12.377 0 102; 0 0 -12.377 11.797 30];
+
+matrix = [1 2 1 0; 1 1 1 -1;1 -1 -1 3];
 detG = det(matrix(:,1:size(matrix, 2)-1)); 
 
     %Version 3 - Mas generica

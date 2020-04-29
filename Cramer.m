@@ -4,7 +4,7 @@
 clc
 clear
 
-matrix = [13.422 0 0 0 750.5; -13.422 12.252 0 0 300; 0 -12.252 12.377 0 102; 0 0 -12.377 11.797 30];
+matrix = [-1 1 1 -1 ; 1 -1 1 3 ; 1 1 2 -2];
 
 numRows = size(matrix, 1);%number of rows
 numCols = size(matrix, 2);%number of columns
@@ -22,6 +22,7 @@ for i = 1:numRows  %loop from 1 to the number of rows in the matrix, numRows = n
     tempMat = [matrix(:,1:i-1),matrix(:,numCols),matrix(:,i+1:numCols-1)]; 
     matrixSol(i) = det(tempMat) / detG;%add solution to the sol matrix
 end
+fprintf('Det Gen %f\n', detG);
 
 fprintf('Solution Matrix\n');
 disp(matrixSol);
